@@ -95,7 +95,7 @@ class Game {
       alert(msg);
       let restartButton = document.getElementById('start');
       restartButton.classList.remove('hide');
-    }, 750)
+    }, 250)
   }
 
   /** handleClick: handle click of column top to play piece */
