@@ -88,12 +88,14 @@ class Game {
     const spot = document.getElementById(`${y}-${x}`);
     spot.append(piece);
   }
- 
+
   /** endGame: announce game end */
   endGame(msg) {
-    alert(msg);
-    let restartButton = document.getElementById('start');
-    restartButton.classList.remove('hide');
+    setTimeout(() => {
+      alert(msg);
+      let restartButton = document.getElementById('start');
+      restartButton.classList.remove('hide');
+    }, 750)
   }
 
   /** handleClick: handle click of column top to play piece */
@@ -184,7 +186,7 @@ class Game {
 }
 
 class Player {
-  constructor(color){
+  constructor(color) {
     this.color = color;
     this.submitColorForm();
   }
@@ -194,10 +196,10 @@ class Player {
   }
 
   loadDom() {
-    document.addEventListener("DOMContentLoaded", () => {});
+    document.addEventListener("DOMContentLoaded", () => { });
   }
 
-  submitColorForm(){
+  submitColorForm() {
     let colorFormSubmit = document.getElementById('submit-form');
 
     colorFormSubmit.addEventListener('click', () => {
@@ -212,7 +214,7 @@ class Player {
       new Game(6, 7, p1Player, p2Player)
 
     })
-   
+
   }
 }
 
